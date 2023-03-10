@@ -12,9 +12,9 @@ namespace BatteryLevelMonitor
 {
     public partial class FormMain : Form
     {
-        System.Windows.Forms.Timer timerLevelChart = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer timerLevelChart = new System.Windows.Forms.Timer(); //timer
         public static string ipAddress = string.Empty;
-        string temp = string.Empty;
+        string resultFromUnit = string.Empty;
         private static DateTime dtInitialCurrentChartTime;
         private System.Threading.Timer timer;
         int interval = 0;
@@ -70,7 +70,7 @@ namespace BatteryLevelMonitor
                 inStream.WriteLine("adb connect " + ipAddress + ":5555");
                 inStream.WriteLine("adb shell dumpsys battery");
 
-                temp = "begin" + Environment.NewLine;
+                resultFromUnit = "begin" + Environment.NewLine;
 
                 Task.Run(() =>
                 {
@@ -93,13 +93,14 @@ namespace BatteryLevelMonitor
         }
         public void setValuesLevel()
         {
-            temp = textBoxStatus.Text;
-            string tempVoltage = temp;
+            resultFromUnit = textBoxStatus.Text;
+            string tempVoltage = resultFromUnit;
             string Battlevel = string.Empty;
             string BattVoltage = string.Empty;
 
             try
             {
+                //Voltage regex
                 string regExPattern2 = "voltage" + ":(.*?\\s\\s)";
                 MatchCollection fieldValue2 = Regex.Matches(tempVoltage, regExPattern2, RegexOptions.IgnoreCase);
 
@@ -110,14 +111,22 @@ namespace BatteryLevelMonitor
 
                 BattVoltage = BattVoltage.Replace("voltage:", "");
                 labelVoltage.Text = "Battery Voltage:" + BattVoltage + "V";
+                //Voltage regex End
 
+
+                //log dateTime
                 DateTime today = DateTime.Now;
                 string time = today.ToString("hh:mm:ss");
                 double diffInSeconds = (DateTime.Now - dtInitialCurrentChartTime).TotalSeconds;
-                string regExPattern = "level" + ":(.*?\\s\\s)";
-                Match fieldValue = Regex.Match(temp, regExPattern, RegexOptions.IgnoreCase);
-                Battlevel = fieldValue.Groups[1].Value.Trim();            
 
+                //Level Regex
+                string regExPattern = "level" + ":(.*?\\s\\s)";
+                Match fieldValue = Regex.Match(resultFromUnit, regExPattern, RegexOptions.IgnoreCase);
+                Battlevel = fieldValue.Groups[1].Value.Trim();
+                //Level Regex End
+
+
+                //Plot Graph
                 chartBatteryLevel.Series[0].Points.AddXY(time, Battlevel);
             }
             catch (Exception e)

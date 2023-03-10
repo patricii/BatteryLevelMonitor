@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxInterval = new System.Windows.Forms.ComboBox();
             this.labelVoltage = new System.Windows.Forms.Label();
+            this.labelLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartBatteryLevel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,17 +94,18 @@
             // 
             // chartBatteryLevel
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend1);
             this.chartBatteryLevel.Location = new System.Drawing.Point(12, 110);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Battery Level";
-            series3.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Battery Level";
+            series1.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series1);
             this.chartBatteryLevel.Size = new System.Drawing.Size(984, 353);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
@@ -174,11 +176,21 @@
             this.labelVoltage.TabIndex = 14;
             this.labelVoltage.Text = "Battery Voltage: ";
             // 
+            // labelLevel
+            // 
+            this.labelLevel.AutoSize = true;
+            this.labelLevel.Location = new System.Drawing.Point(829, 299);
+            this.labelLevel.Name = "labelLevel";
+            this.labelLevel.Size = new System.Drawing.Size(72, 13);
+            this.labelLevel.TabIndex = 15;
+            this.labelLevel.Text = "Battery Level:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 491);
+            this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.labelVoltage);
             this.Controls.Add(this.comboBoxInterval);
             this.Controls.Add(this.label4);
@@ -214,6 +226,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxInterval;
         private System.Windows.Forms.Label labelVoltage;
+        private System.Windows.Forms.Label labelLevel;
     }
 }
 
