@@ -1,0 +1,9 @@
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe.config
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.pdb
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.FormMain.resources
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.Properties.Resources.resources
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.GenerateResource.cache
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.CoreCompileInputs.cache
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.exe
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.pdb
