@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(455, 30);
+            this.buttonStart.Location = new System.Drawing.Point(448, 37);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(87, 40);
             this.buttonStart.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             this.textBoxIp.Location = new System.Drawing.Point(43, 30);
             this.textBoxIp.Name = "textBoxIp";
-            this.textBoxIp.Size = new System.Drawing.Size(129, 20);
+            this.textBoxIp.Size = new System.Drawing.Size(104, 20);
             this.textBoxIp.TabIndex = 5;
             this.textBoxIp.Text = "192.168.137.128";
             // 
@@ -94,18 +94,18 @@
             // 
             // chartBatteryLevel
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend3);
             this.chartBatteryLevel.Location = new System.Drawing.Point(12, 110);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Battery Level";
-            series1.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Battery Level";
+            series3.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series3);
             this.chartBatteryLevel.Size = new System.Drawing.Size(984, 353);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
@@ -122,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(399, 469);
+            this.label3.Location = new System.Drawing.Point(452, 469);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 10;
@@ -139,7 +139,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(192, 8);
+            this.label4.Location = new System.Drawing.Point(168, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 12;
@@ -161,7 +161,7 @@
             "50",
             "55",
             "60"});
-            this.comboBoxInterval.Location = new System.Drawing.Point(195, 30);
+            this.comboBoxInterval.Location = new System.Drawing.Point(171, 30);
             this.comboBoxInterval.Name = "comboBoxInterval";
             this.comboBoxInterval.Size = new System.Drawing.Size(53, 21);
             this.comboBoxInterval.TabIndex = 13;

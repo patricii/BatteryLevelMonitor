@@ -44,7 +44,7 @@ namespace BatteryLevelMonitor
             timerLevelChart.Start();
         }
 
-        public void startRoutine()
+        public void startRoutine() //CMD.exe commands to unit
         {
             try
             {
@@ -123,11 +123,20 @@ namespace BatteryLevelMonitor
                 string regExPattern = "level" + ":(.*?\\s\\s)";
                 Match fieldValue = Regex.Match(resultFromUnit, regExPattern, RegexOptions.IgnoreCase);
                 Battlevel = fieldValue.Groups[1].Value.Trim();
+
+                labelLevel.Text = "Battery Level:" + Battlevel + "%";
                 //Level Regex End
 
 
                 //Plot Graph
                 chartBatteryLevel.Series[0].Points.AddXY(time, Battlevel);
+
+                //To do ! create log
+
+                //BattVoltage
+                //Battlevel
+                //time
+
             }
             catch (Exception e)
             {
