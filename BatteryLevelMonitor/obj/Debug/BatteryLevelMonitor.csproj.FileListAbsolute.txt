@@ -1,34 +1,10 @@
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe.config
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.pdb
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csprojAssemblyReference.cache
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.FormMain.resources
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.Properties.Resources.resources
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.GenerateResource.cache
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.CoreCompileInputs.cache
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.exe
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.pdb
-<<<<<<< HEAD
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe.config
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.pdb
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.AssemblyReference.cache
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.SuggestedBindingRedirects.cache
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.FormMain.resources
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.Properties.Resources.resources
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.GenerateResource.cache
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.exe
-C:\Users\Administrator\Documents\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.pdb
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe.config
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.exe
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\bin\Debug\BatteryLevelMonitor.pdb
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.FormMain.resources
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.Properties.Resources.resources
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.GenerateResource.cache
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.CoreCompileInputs.cache
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.exe
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.pdb
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\Lucca\BatteryLevelMonitor_sourcecode\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csprojAssemblyReference.cache
-=======
->>>>>>> 456ffd315d6367f2cb988b731926779468434db6
-C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csprojAssemblyReference.cache
