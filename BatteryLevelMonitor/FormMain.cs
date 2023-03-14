@@ -22,7 +22,21 @@ namespace BatteryLevelMonitor
         {
             InitializeComponent();
         }
-
+        void timerLevelChart_Tick(object sender, EventArgs e)
+        {
+            setValuesLevel();
+        }
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        private void buttonFolder_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBoxSave.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
         private void buttonStart_Click(object sender, EventArgs e)
         {
 
@@ -87,7 +101,6 @@ namespace BatteryLevelMonitor
             finally
             {
                 buttonLed.BackColor = Color.Red;
-
             }
         }
         public void setValuesLevel()
@@ -96,7 +109,6 @@ namespace BatteryLevelMonitor
             string tempVoltage = resultFromUnit;
             string Battlevel = string.Empty;
             string BattVoltage = string.Empty;
-            // filepath = "BatteryMonitorLog.csv";
             string filepath = @"\BatteryMonitorLog.csv";
 
             filepath = textBoxSave.Text + filepath;
@@ -128,9 +140,8 @@ namespace BatteryLevelMonitor
                 Battlevel = fieldValue.Groups[1].Value.Trim();
 
                 labelLevel.Text = "Battery Level:" + Battlevel + "%";
-
-
                 labelLevel.Text = "Battery Level:" + Battlevel + "%";
+
                 //Level Regex End
                 double tmpBattVoltage = 0.0;
                 try
@@ -144,12 +155,10 @@ namespace BatteryLevelMonitor
 
                 //Plot Graph
                 chartBatteryLevel.Series[0].Points.AddXY(time, Battlevel);
-
                 chartBatteryLevel.Series[1].Points.AddXY(time, tmpBattVoltage.ToString());
-
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
 
-
+                //write log report
                 if (!File.Exists(filepath))
                 {
                     using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
@@ -158,7 +167,6 @@ namespace BatteryLevelMonitor
                         writer.WriteLine("sep=,");
                         writer.WriteLine($"{time}, {Battlevel}, {tmpBattVoltage}");
                     }
-
                 }
                 else
                 {
@@ -166,34 +174,19 @@ namespace BatteryLevelMonitor
                 FileMode.Append, FileAccess.Write)))
                     {
                         writer.WriteLine($"{time}, {Battlevel}, {tmpBattVoltage}");
-
-
                     }
                 }
-
             }
             catch (Exception e)
             {
                 MessageBox.Show("Error: " + e);
             }
-        }
-        void timerLevelChart_Tick(object sender, EventArgs e)
-        {
-            setValuesLevel();
-        }
-
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-        private void buttonFolder_Click(object sender, EventArgs e)
-        {
-
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            finally
             {
-                textBoxSave.Text = folderBrowserDialog1.SelectedPath;
+                Battlevel = "";
+                BattVoltage = "";
             }
-
         }
+
     }
 }
