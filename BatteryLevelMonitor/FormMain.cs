@@ -127,6 +127,12 @@ namespace BatteryLevelMonitor
                 string regExPattern = "level" + ":(.*?\\s\\s)";
                 Match fieldValue = Regex.Match(resultFromUnit, regExPattern, RegexOptions.IgnoreCase);
                 Battlevel = fieldValue.Groups[1].Value.Trim();
+<<<<<<< HEAD
+=======
+
+                labelLevel.Text = "Battery Level:" + Battlevel + "%";
+                //Level Regex End
+>>>>>>> 456ffd315d6367f2cb988b731926779468434db6
 
                 labelLevel.Text = "Battery Level:" + Battlevel + "%";
                 //Level Regex End
@@ -141,6 +147,7 @@ namespace BatteryLevelMonitor
 
                 //Plot Graph
                 chartBatteryLevel.Series[0].Points.AddXY(time, Battlevel);
+<<<<<<< HEAD
                 chartBatteryLevel.Series[1].Points.AddXY(time, tmpBattVoltage.ToString());
 
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
@@ -166,6 +173,14 @@ namespace BatteryLevelMonitor
 
                     }
                 }
+=======
+
+                //To do ! create log
+
+                //BattVoltage
+                //Battlevel
+                //time
+>>>>>>> 456ffd315d6367f2cb988b731926779468434db6
 
             }
             catch (Exception e)
