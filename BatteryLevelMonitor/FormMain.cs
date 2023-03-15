@@ -37,6 +37,13 @@ namespace BatteryLevelMonitor
                 textBoxSave.Text = folderBrowserDialog1.SelectedPath;
             }
         }
+        public void killProcess(string proc)
+        {
+            foreach (var process in Process.GetProcessesByName(proc))
+            {
+                process.Kill();
+            }
+        }
         private void buttonStart_Click(object sender, EventArgs e)
         {
 
@@ -45,14 +52,14 @@ namespace BatteryLevelMonitor
             interval = Convert.ToInt32(comboBoxInterval.Text);
 
             var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(interval);
+            var periodTimeSpan = TimeSpan.FromMinutes(interval);
             timer = new System.Threading.Timer((obj) =>
             {
                 startRoutine();
 
             }, null, startTimeSpan, periodTimeSpan);
 
-            timerLevelChart.Interval = (interval + 4) * 1000;
+            timerLevelChart.Interval = (interval + 1) * 60000;
             timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
             timerLevelChart.Start();
         }
@@ -100,7 +107,7 @@ namespace BatteryLevelMonitor
             }
             finally
             {
-                buttonLed.BackColor = Color.Red;
+                //buttonLed.BackColor = Color.Red;
             }
         }
         public void setValuesLevel()
@@ -185,6 +192,8 @@ namespace BatteryLevelMonitor
             {
                 Battlevel = "";
                 BattVoltage = "";
+                killProcess("adb");
+                killProcess("cmd");
             }
         }
 
