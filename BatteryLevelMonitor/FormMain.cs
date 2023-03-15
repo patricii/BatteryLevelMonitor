@@ -16,6 +16,7 @@ namespace BatteryLevelMonitor
         string resultFromUnit = string.Empty;
         private static DateTime dtInitialCurrentChartTime;
         private System.Threading.Timer timer;
+        int countInstant = 0;
         int interval = 0;
 
         public FormMain()
@@ -24,6 +25,8 @@ namespace BatteryLevelMonitor
         }
         void timerLevelChart_Tick(object sender, EventArgs e)
         {
+            startRoutine();
+            Thread.Sleep(5000);
             setValuesLevel();
         }
         private void buttonExit_Click(object sender, EventArgs e)
@@ -46,22 +49,23 @@ namespace BatteryLevelMonitor
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
-
+            buttonLed.BackColor = Color.Green;
             ipAddress = textBoxIp.Text;
             labelStatus.Text = "Connected to device =>" + ipAddress + ":5555";
             interval = Convert.ToInt32(comboBoxInterval.Text);
 
-            var startTimeSpan = TimeSpan.Zero;
+           /* var startTimeSpan = TimeSpan.Zero;
             var periodTimeSpan = TimeSpan.FromMinutes(interval);
             timer = new System.Threading.Timer((obj) =>
             {
                 startRoutine();
 
-            }, null, startTimeSpan, periodTimeSpan);
+            }, null, startTimeSpan, periodTimeSpan);*/
 
-            timerLevelChart.Interval = (interval + 1) * 60000;
+            timerLevelChart.Interval = interval * 60000;
             timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
             timerLevelChart.Start();
+
         }
 
         public void startRoutine() //CMD.exe commands to unit
@@ -70,7 +74,6 @@ namespace BatteryLevelMonitor
             {
                 ipAddress = textBoxIp.Text;
                 dtInitialCurrentChartTime = DateTime.Now;
-                buttonLed.BackColor = Color.Green;
                 var proc = new Process
                 {
                     StartInfo = new ProcessStartInfo
@@ -99,7 +102,6 @@ namespace BatteryLevelMonitor
                         textBoxStatus.Text += outStream.ReadLine();
                     }
                 });
-                Thread.Sleep(2000);
             }
             catch (Exception e)
             {
@@ -138,8 +140,8 @@ namespace BatteryLevelMonitor
 
                 //log dateTime
                 DateTime today = DateTime.Now;
+
                 string time = today.ToString("hh:mm:ss");
-                double diffInSeconds = (DateTime.Now - dtInitialCurrentChartTime).TotalSeconds;
 
                 //Level Regex
                 string regExPattern = "level" + ":(.*?\\s\\s)";
@@ -147,10 +149,10 @@ namespace BatteryLevelMonitor
                 Battlevel = fieldValue.Groups[1].Value.Trim();
 
                 labelLevel.Text = "Battery Level:" + Battlevel + "%";
-                labelLevel.Text = "Battery Level:" + Battlevel + "%";
 
                 //Level Regex End
                 double tmpBattVoltage = 0.0;
+                
                 try
                 {
                     tmpBattVoltage = double.Parse(BattVoltage) / 1000;
@@ -160,10 +162,12 @@ namespace BatteryLevelMonitor
                     //do nothing!!!
                 }
 
+
                 //Plot Graph
-                chartBatteryLevel.Series[0].Points.AddXY(time, Battlevel);
-                chartBatteryLevel.Series[1].Points.AddXY(time, tmpBattVoltage.ToString());
+                chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
+                chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
+
 
                 //write log report
                 if (!File.Exists(filepath))
@@ -172,7 +176,7 @@ namespace BatteryLevelMonitor
                 FileMode.Create, FileAccess.Write)))
                     {
                         writer.WriteLine("sep=,");
-                        writer.WriteLine($"{time}, {Battlevel}, {tmpBattVoltage}");
+                        writer.WriteLine($"{time},{countInstant},{Battlevel}, {tmpBattVoltage}");
                     }
                 }
                 else
@@ -180,7 +184,7 @@ namespace BatteryLevelMonitor
                     using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
                 FileMode.Append, FileAccess.Write)))
                     {
-                        writer.WriteLine($"{time}, {Battlevel}, {tmpBattVoltage}");
+                        writer.WriteLine($"{time}, {countInstant}, {Battlevel}, {tmpBattVoltage}");
                     }
                 }
             }
@@ -192,8 +196,8 @@ namespace BatteryLevelMonitor
             {
                 Battlevel = "";
                 BattVoltage = "";
-                killProcess("adb");
-                killProcess("cmd");
+                resultFromUnit = "";
+                countInstant = countInstant + interval;
             }
         }
 
