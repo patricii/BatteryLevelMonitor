@@ -44,7 +44,7 @@ namespace BatteryLevelMonitor
             labelStatus.Text = "Connected to device =>" + ipAddress + ":5555";
             interval = Convert.ToInt32(comboBoxInterval.Text);
 
-            timerLevelChart.Interval = interval * 60000;
+            timerLevelChart.Interval = interval * 1000;
             timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
             timerLevelChart.Start();
 
@@ -77,7 +77,7 @@ namespace BatteryLevelMonitor
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
-                    inStream.WriteLine("adb connect " + ipAddress + ":5555");
+                    //inStream.WriteLine("adb connect " + ipAddress + ":5555");
                     inStream.WriteLine("adb shell dumpsys battery");
                     inStream.WriteLine("exit");
 
@@ -161,6 +161,8 @@ namespace BatteryLevelMonitor
                 }
 
                 //Plot Graph
+                chartBatteryLevel.Series[0].BorderWidth = 4;
+                chartBatteryLevel.Series[1].BorderWidth = 4;
                 chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
                 chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
@@ -191,6 +193,17 @@ namespace BatteryLevelMonitor
             }
             finally
             {
+                if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= 1))
+                {
+                    timerLevelChart.Enabled = false;
+                    MessageBox.Show("....Discharging Analysis completed....!!!");
+                }
+                if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
+                {
+                    timerLevelChart.Enabled = false;
+                    MessageBox.Show("....Charging Analysis completed....!!!");
+
+                }
                 Battlevel = "";
                 BattVoltage = "";
                 resultFromUnit = "";
