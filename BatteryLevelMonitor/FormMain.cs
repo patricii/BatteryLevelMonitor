@@ -84,7 +84,7 @@ namespace BatteryLevelMonitor
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
-                    // inStream.WriteLine("adb connect " + ipAddress + ":5555");
+                    inStream.WriteLine("adb connect " + ipAddress + ":5555");
                     inStream.WriteLine("adb shell dumpsys battery");
                     inStream.WriteLine("exit");
 

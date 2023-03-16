@@ -7,3 +7,4 @@ C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\Batter
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csproj.CoreCompileInputs.cache
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.exe
 C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.pdb
+C:\DEVELOPMENT PROJECTS\BatteryLevelMonitor\BatteryLevelMonitor\obj\Debug\BatteryLevelMonitor.csprojAssemblyReference.cache
