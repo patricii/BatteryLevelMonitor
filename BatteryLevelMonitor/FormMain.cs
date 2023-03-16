@@ -3,8 +3,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BatteryLevelMonitor
@@ -150,6 +148,8 @@ namespace BatteryLevelMonitor
 
                 //Level Regex End
                 double tmpBattVoltage = 0.0;
+                if (countInstant == 0)
+                    labelInit.Text = time;
 
                 try
                 {
@@ -197,11 +197,13 @@ namespace BatteryLevelMonitor
                 if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= 1))
                 {
                     timerLevelChart.Enabled = false;
+                    buttonLed.BackColor = Color.Red;
                     MessageBox.Show("....Discharging Analysis completed....!!!");
                 }
                 if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
                 {
                     timerLevelChart.Enabled = false;
+                    buttonLed.BackColor = Color.Red;
                     MessageBox.Show("....Charging Analysis completed....!!!");
 
                 }
@@ -209,6 +211,7 @@ namespace BatteryLevelMonitor
                 BattVoltage = "";
                 resultFromUnit = "";
                 countInstant = countInstant + interval;
+                labelCycle.Text = countInstant.ToString(); ;
             }
         }
 

@@ -54,6 +54,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.labelInit = new System.Windows.Forms.Label();
+            this.labelCycle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartBatteryLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(514, 45);
+            this.buttonStart.Location = new System.Drawing.Point(524, 78);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(166, 77);
             this.buttonStart.TabIndex = 2;
@@ -192,7 +194,7 @@
             // labelVoltage
             // 
             this.labelVoltage.AutoSize = true;
-            this.labelVoltage.Location = new System.Drawing.Point(15, 33);
+            this.labelVoltage.Location = new System.Drawing.Point(6, 18);
             this.labelVoltage.Name = "labelVoltage";
             this.labelVoltage.Size = new System.Drawing.Size(85, 13);
             this.labelVoltage.TabIndex = 14;
@@ -201,7 +203,7 @@
             // labelLevel
             // 
             this.labelLevel.AutoSize = true;
-            this.labelLevel.Location = new System.Drawing.Point(15, 83);
+            this.labelLevel.Location = new System.Drawing.Point(6, 51);
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(72, 13);
             this.labelLevel.TabIndex = 15;
@@ -248,7 +250,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BatteryLevelMonitor.Properties.Resources.FLEX_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(984, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(993, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -275,6 +277,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelCycle);
+            this.groupBox2.Controls.Add(this.labelInit);
             this.groupBox2.Controls.Add(this.labelVoltage);
             this.groupBox2.Controls.Add(this.labelLevel);
             this.groupBox2.Location = new System.Drawing.Point(318, 13);
@@ -293,6 +297,24 @@
             this.label6.Size = new System.Drawing.Size(151, 12);
             this.label6.TabIndex = 23;
             this.label6.Text = "Developed by Lucca G. / A. Patricio";
+            // 
+            // labelInit
+            // 
+            this.labelInit.AutoSize = true;
+            this.labelInit.Location = new System.Drawing.Point(6, 87);
+            this.labelInit.Name = "labelInit";
+            this.labelInit.Size = new System.Drawing.Size(58, 13);
+            this.labelInit.TabIndex = 16;
+            this.labelInit.Text = "Start Time:";
+            // 
+            // labelCycle
+            // 
+            this.labelCycle.AutoSize = true;
+            this.labelCycle.Location = new System.Drawing.Point(6, 117);
+            this.labelCycle.Name = "labelCycle";
+            this.labelCycle.Size = new System.Drawing.Size(49, 13);
+            this.labelCycle.TabIndex = 17;
+            this.labelCycle.Text = "Cycle nº:";
             // 
             // FormMain
             // 
@@ -348,6 +370,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelCycle;
+        private System.Windows.Forms.Label labelInit;
     }
 }
 
