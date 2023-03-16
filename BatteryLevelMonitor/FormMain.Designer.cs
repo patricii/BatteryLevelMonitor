@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(489, 47);
+            this.buttonStart.Location = new System.Drawing.Point(514, 45);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(166, 77);
             this.buttonStart.TabIndex = 2;
@@ -104,31 +104,31 @@
             this.textBoxStatus.Location = new System.Drawing.Point(12, 198);
             this.textBoxStatus.Multiline = true;
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(430, 388);
+            this.textBoxStatus.Size = new System.Drawing.Size(417, 388);
             this.textBoxStatus.TabIndex = 6;
             // 
             // chartBatteryLevel
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend2);
-            this.chartBatteryLevel.Location = new System.Drawing.Point(451, 198);
+            chartArea3.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend3);
+            this.chartBatteryLevel.Location = new System.Drawing.Point(435, 198);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.Legend = "Legend1";
-            series3.Name = "Battery Level";
-            series3.YValuesPerPoint = 4;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Battery Voltage";
-            series4.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series3);
-            this.chartBatteryLevel.Series.Add(series4);
-            this.chartBatteryLevel.Size = new System.Drawing.Size(706, 388);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series5.Legend = "Legend1";
+            series5.Name = "Battery Level";
+            series5.YValuesPerPoint = 4;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.Name = "Battery Voltage";
+            series6.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series5);
+            this.chartBatteryLevel.Series.Add(series6);
+            this.chartBatteryLevel.Size = new System.Drawing.Size(767, 388);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
             // 
@@ -208,7 +208,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(1111, 592);
+            this.buttonExit.Location = new System.Drawing.Point(1164, 592);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(38, 23);
             this.buttonExit.TabIndex = 16;
@@ -247,7 +247,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BatteryLevelMonitor.Properties.Resources.FLEX_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(939, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(984, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,7 +278,7 @@
             this.groupBox2.Controls.Add(this.labelLevel);
             this.groupBox2.Location = new System.Drawing.Point(318, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 145);
+            this.groupBox2.Size = new System.Drawing.Size(166, 145);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Measures";
@@ -298,7 +298,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1161, 618);
+            this.ClientSize = new System.Drawing.Size(1213, 618);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -312,7 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Battery Level Monitor v1.0";
+            this.Text = "WiFi Battery Level Monitor - WBLMv1.0";
             ((System.ComponentModel.ISupportInitialize)(this.chartBatteryLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

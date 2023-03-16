@@ -37,13 +37,6 @@ namespace BatteryLevelMonitor
                 textBoxSave.Text = folderBrowserDialog1.SelectedPath;
             }
         }
-        public void killProcess(string proc)
-        {
-            foreach (var process in Process.GetProcessesByName(proc))
-            {
-                process.Kill();
-            }
-        }
         private void buttonStart_Click(object sender, EventArgs e)
         {
             buttonLed.BackColor = Color.Green;
@@ -180,6 +173,7 @@ namespace BatteryLevelMonitor
                     {
                         writer.WriteLine("sep=,");
                         writer.WriteLine($"{time},{countInstant},{Battlevel}, {tmpBattVoltage}");
+
                     }
                 }
                 else
