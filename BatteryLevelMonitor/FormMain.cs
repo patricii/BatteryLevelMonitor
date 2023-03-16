@@ -149,7 +149,7 @@ namespace BatteryLevelMonitor
                 //Level Regex End
                 double tmpBattVoltage = 0.0;
                 if (countInstant == 0)
-                    labelInit.Text = time;
+                    labelInit.Text = "Start Time:" + time;
 
                 try
                 {
@@ -211,7 +211,7 @@ namespace BatteryLevelMonitor
                 BattVoltage = "";
                 resultFromUnit = "";
                 countInstant = countInstant + interval;
-                labelCycle.Text = countInstant.ToString(); ;
+                labelCycle.Text = "Cycle nº:" + countInstant.ToString(); ;
             }
         }
 
