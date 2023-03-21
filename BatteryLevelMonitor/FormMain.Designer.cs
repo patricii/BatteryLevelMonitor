@@ -53,9 +53,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelInit = new System.Windows.Forms.Label();
             this.labelCycle = new System.Windows.Forms.Label();
+            this.labelInit = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartBatteryLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(524, 78);
+            this.buttonStart.Location = new System.Drawing.Point(519, 64);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(166, 77);
             this.buttonStart.TabIndex = 2;
@@ -112,6 +113,7 @@
             // chartBatteryLevel
             // 
             this.chartBatteryLevel.BorderlineWidth = 4;
+            chartArea1.Area3DStyle.WallWidth = 4;
             chartArea1.Name = "ChartArea1";
             this.chartBatteryLevel.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -131,27 +133,27 @@
             series2.YValuesPerPoint = 4;
             this.chartBatteryLevel.Series.Add(series1);
             this.chartBatteryLevel.Series.Add(series2);
-            this.chartBatteryLevel.Size = new System.Drawing.Size(767, 388);
+            this.chartBatteryLevel.Size = new System.Drawing.Size(776, 388);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 162);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(503, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 13);
+            this.label2.Size = new System.Drawing.Size(149, 15);
             this.label2.TabIndex = 9;
             this.label2.Text = "Level (%) / Voltage (V)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(541, 592);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(732, 589);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(88, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Instant (min)";
             // 
@@ -288,15 +290,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Measures";
             // 
-            // label6
+            // labelCycle
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 602);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 12);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Developed by Lucca G. / A. Patricio";
+            this.labelCycle.AutoSize = true;
+            this.labelCycle.Location = new System.Drawing.Point(6, 117);
+            this.labelCycle.Name = "labelCycle";
+            this.labelCycle.Size = new System.Drawing.Size(49, 13);
+            this.labelCycle.TabIndex = 17;
+            this.labelCycle.Text = "Cycle nº:";
             // 
             // labelInit
             // 
@@ -307,14 +308,25 @@
             this.labelInit.TabIndex = 16;
             this.labelInit.Text = "Start Time:";
             // 
-            // labelCycle
+            // label6
             // 
-            this.labelCycle.AutoSize = true;
-            this.labelCycle.Location = new System.Drawing.Point(6, 117);
-            this.labelCycle.Name = "labelCycle";
-            this.labelCycle.Size = new System.Drawing.Size(49, 13);
-            this.labelCycle.TabIndex = 17;
-            this.labelCycle.Text = "Cycle nº:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 602);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 12);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Developed by A. Patricio / M. Oleto";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 15);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Commands:";
             // 
             // FormMain
             // 
@@ -322,6 +334,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1213, 618);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -372,6 +385,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelCycle;
         private System.Windows.Forms.Label labelInit;
+        private System.Windows.Forms.Label label7;
     }
 }
 
