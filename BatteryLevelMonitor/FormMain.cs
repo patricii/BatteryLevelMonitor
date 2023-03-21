@@ -190,7 +190,7 @@ namespace BatteryLevelMonitor
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error: " + e);
+                //MessageBox.Show("Error: " + e);
             }
             finally
             {
@@ -210,8 +210,6 @@ namespace BatteryLevelMonitor
                 Battlevel = "";
                 BattVoltage = "";
                 resultFromUnit = "";
-                countInstant = countInstant + interval;
-                countInstant = countInstant / countInstant;
                 labelCycle.Text = "Cycle nº:" + countInstant.ToString(); ;
             }
         }
