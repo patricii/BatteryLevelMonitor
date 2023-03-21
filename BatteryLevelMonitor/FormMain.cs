@@ -75,7 +75,7 @@ namespace BatteryLevelMonitor
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
-                    inStream.WriteLine("adb connect " + ipAddress + ":5555");
+                    //inStream.WriteLine("adb connect " + ipAddress + ":5555");
                     inStream.WriteLine("adb shell dumpsys battery");
                     inStream.WriteLine("exit");
 
@@ -166,6 +166,7 @@ namespace BatteryLevelMonitor
                 chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
                 chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
+                chartBatteryLevel.ChartAreas[0].AxisY2.Interval = 0.2;
 
                 //write log report
                 if (!File.Exists(filepath))
@@ -210,7 +211,8 @@ namespace BatteryLevelMonitor
                 Battlevel = "";
                 BattVoltage = "";
                 resultFromUnit = "";
-                labelCycle.Text = "Cycle nº:" + countInstant.ToString(); ;
+                countInstant++;
+                labelCycle.Text = "Cycle nº:" + countInstant.ToString();
             }
         }
 

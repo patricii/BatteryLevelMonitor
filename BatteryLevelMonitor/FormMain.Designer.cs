@@ -67,9 +67,9 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(520, 62);
+            this.buttonStart.Location = new System.Drawing.Point(522, 47);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(166, 29);
+            this.buttonStart.Size = new System.Drawing.Size(166, 62);
             this.buttonStart.TabIndex = 2;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = false;
@@ -321,9 +321,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 602);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 12);
+            this.label6.Size = new System.Drawing.Size(151, 12);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Developed by A. Patricio / M. Oleto";
+            this.label6.Text = "Developed by Lucca G. / A. Patricio";
             // 
             // label7
             // 
