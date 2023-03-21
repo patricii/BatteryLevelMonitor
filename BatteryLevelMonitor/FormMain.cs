@@ -129,8 +129,7 @@ namespace BatteryLevelMonitor
                     BattVoltage = match.ToString();
                 }
 
-                BattVoltage = BattVoltage.Replace("voltage:", "");
-                labelVoltage.Text = "Battery Voltage:" + BattVoltage + "V";
+                BattVoltage = BattVoltage.Replace("voltage:", "");               
                 //Voltage regex End
 
 
@@ -160,6 +159,7 @@ namespace BatteryLevelMonitor
                     //do nothing!!!
                 }
 
+                labelVoltage.Text = "Battery Voltage:" + tmpBattVoltage + "V";
                 //Plot Graph
                 chartBatteryLevel.Series[0].BorderWidth = 4;
                 chartBatteryLevel.Series[1].BorderWidth = 4;
@@ -211,6 +211,7 @@ namespace BatteryLevelMonitor
                 BattVoltage = "";
                 resultFromUnit = "";
                 countInstant = countInstant + interval;
+                countInstant = countInstant / countInstant;
                 labelCycle.Text = "Cycle nº:" + countInstant.ToString(); ;
             }
         }
