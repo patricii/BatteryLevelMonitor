@@ -43,7 +43,8 @@ namespace BatteryLevelMonitor
             {
                 MessageBox.Show("Digite o IP da unidade a ser monitorada!!!");
             }
-            else {
+            else
+            {
                 buttonLed.BackColor = Color.Green;
                 labelStatus.Text = "Connected to device =>" + ipAddress + ":5555";
                 interval = Convert.ToInt32(comboBoxInterval.Text);
@@ -82,7 +83,7 @@ namespace BatteryLevelMonitor
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
-                    inStream.WriteLine("adb connect " + ipAddress + ":5555");
+                    //inStream.WriteLine("adb connect " + ipAddress + ":5555");
                     inStream.WriteLine("adb shell dumpsys battery");
                     inStream.WriteLine("exit");
 
@@ -122,7 +123,7 @@ namespace BatteryLevelMonitor
             string Battlevel = string.Empty;
             string BattVoltage = string.Empty;
             string logName = ipAddress;
-            logName = logName.Replace(".","");
+            logName = logName.Replace(".", "");
             string filepath = @"\BatteryMonitorLog" + logName + ".csv";
 
             filepath = textBoxSave.Text + filepath;
@@ -138,7 +139,7 @@ namespace BatteryLevelMonitor
                     BattVoltage = match.ToString();
                 }
 
-                BattVoltage = BattVoltage.Replace("voltage:", "");               
+                BattVoltage = BattVoltage.Replace("voltage:", "");
                 //Voltage regex End
 
 
@@ -169,34 +170,36 @@ namespace BatteryLevelMonitor
                 }
 
                 labelVoltage.Text = "Battery Voltage:" + tmpBattVoltage + "V";
-                //Plot Graph
-                chartBatteryLevel.Series[0].BorderWidth = 4;
-                chartBatteryLevel.Series[1].BorderWidth = 4;
-                chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
-                chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
                 chartBatteryLevel.ChartAreas[0].AxisY2.Minimum = 3;
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
                 chartBatteryLevel.ChartAreas[0].AxisY2.Interval = 0.1;
+                chartBatteryLevel.Series[0].BorderWidth = 4;
+                chartBatteryLevel.Series[1].BorderWidth = 4;
 
-
-                //write log report
-                if (!File.Exists(filepath))
+                if (tmpBattVoltage != 0)
                 {
-                    using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
-                FileMode.Create, FileAccess.Write)))
+                    //Plot Graph
+                    chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
+                    chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
+                    //write log report
+                    if (!File.Exists(filepath))
                     {
-                        writer.WriteLine("sep=,");
-                        writer.WriteLine("Time,Instant,BattLevel,BattVoltage");
-                        writer.WriteLine($"{time},{countInstant},{Battlevel}, {tmpBattVoltage}");
+                        using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
+                    FileMode.Create, FileAccess.Write)))
+                        {
+                            writer.WriteLine("sep=,");
+                            writer.WriteLine("Time,Instant,BattLevel,BattVoltage");
+                            writer.WriteLine($"{time},{countInstant},{Battlevel}, {tmpBattVoltage}");
 
+                        }
                     }
-                }
-                else
-                {
-                    using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
-                FileMode.Append, FileAccess.Write)))
+                    else
                     {
-                        writer.WriteLine($"{time}, {countInstant}, {Battlevel}, {tmpBattVoltage}");
+                        using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
+                    FileMode.Append, FileAccess.Write)))
+                        {
+                            writer.WriteLine($"{time}, {countInstant}, {Battlevel}, {tmpBattVoltage}");
+                        }
                     }
                 }
             }
@@ -206,19 +209,24 @@ namespace BatteryLevelMonitor
             }
             finally
             {
-                if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= 1))
+                try
                 {
-                    timerLevelChart.Enabled = false;
-                    buttonLed.BackColor = Color.Red;
-                    MessageBox.Show("....Discharging Analysis completed....!!!");
-                }
-                if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
-                {
-                    timerLevelChart.Enabled = false;
-                    buttonLed.BackColor = Color.Red;
-                    MessageBox.Show("....Charging Analysis completed....!!!");
+                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= 1))
+                    {
+                        timerLevelChart.Enabled = false;
+                        buttonLed.BackColor = Color.Red;
+                        MessageBox.Show("....Discharging Analysis completed....!!!");
+                    }
+                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
+                    {
+                        timerLevelChart.Enabled = false;
+                        buttonLed.BackColor = Color.Red;
+                        MessageBox.Show("....Charging Analysis completed....!!!");
 
+                    }
                 }
+                catch { }
+
                 Battlevel = "";
                 BattVoltage = "";
                 resultFromUnit = "";
