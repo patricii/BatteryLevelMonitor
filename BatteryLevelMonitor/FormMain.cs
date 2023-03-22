@@ -37,14 +37,21 @@ namespace BatteryLevelMonitor
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            buttonLed.BackColor = Color.Green;
             ipAddress = textBoxIp.Text;
-            labelStatus.Text = "Connected to device =>" + ipAddress + ":5555";
-            interval = Convert.ToInt32(comboBoxInterval.Text);
 
-            timerLevelChart.Interval = interval * 60000;
-            timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
-            timerLevelChart.Start();
+            if (ipAddress.Length < 13)
+            {
+                MessageBox.Show("Digite o IP da unidade a ser monitorada!!!");
+            }
+            else {
+                buttonLed.BackColor = Color.Green;
+                labelStatus.Text = "Connected to device =>" + ipAddress + ":5555";
+                interval = Convert.ToInt32(comboBoxInterval.Text);
+
+                timerLevelChart.Interval = interval * 60000;
+                timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
+                timerLevelChart.Start();
+            }
 
         }
 
@@ -75,7 +82,7 @@ namespace BatteryLevelMonitor
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
-                    //inStream.WriteLine("adb connect " + ipAddress + ":5555");
+                    inStream.WriteLine("adb connect " + ipAddress + ":5555");
                     inStream.WriteLine("adb shell dumpsys battery");
                     inStream.WriteLine("exit");
 
@@ -114,7 +121,9 @@ namespace BatteryLevelMonitor
             string tempVoltage = resultFromUnit;
             string Battlevel = string.Empty;
             string BattVoltage = string.Empty;
-            string filepath = @"\BatteryMonitorLog.csv";
+            string logName = ipAddress;
+            logName = logName.Replace(".","");
+            string filepath = @"\BatteryMonitorLog" + logName + ".csv";
 
             filepath = textBoxSave.Text + filepath;
 
@@ -165,8 +174,10 @@ namespace BatteryLevelMonitor
                 chartBatteryLevel.Series[1].BorderWidth = 4;
                 chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
                 chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
+                chartBatteryLevel.ChartAreas[0].AxisY2.Minimum = 3;
                 chartBatteryLevel.ChartAreas[0].AxisY.Interval = 5;
-                chartBatteryLevel.ChartAreas[0].AxisY2.Interval = 0.2;
+                chartBatteryLevel.ChartAreas[0].AxisY2.Interval = 0.1;
+
 
                 //write log report
                 if (!File.Exists(filepath))

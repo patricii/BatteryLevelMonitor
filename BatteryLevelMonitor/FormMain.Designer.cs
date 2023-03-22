@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonStart.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.Location = new System.Drawing.Point(522, 47);
             this.buttonStart.Name = "buttonStart";
@@ -100,7 +100,7 @@
             this.textBoxIp.Name = "textBoxIp";
             this.textBoxIp.Size = new System.Drawing.Size(104, 20);
             this.textBoxIp.TabIndex = 5;
-            this.textBoxIp.Text = "192.168.137.128";
+            this.textBoxIp.Text = "192.168.137.";
             // 
             // textBoxStatus
             // 
@@ -113,27 +113,27 @@
             // chartBatteryLevel
             // 
             this.chartBatteryLevel.BorderlineWidth = 4;
-            chartArea1.Area3DStyle.WallWidth = 4;
-            chartArea1.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend1);
+            chartArea5.Area3DStyle.WallWidth = 4;
+            chartArea5.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend5);
             this.chartBatteryLevel.Location = new System.Drawing.Point(345, 142);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Battery Level";
-            series1.YValuesPerPoint = 4;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Battery Voltage";
-            series2.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series2.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series1);
-            this.chartBatteryLevel.Series.Add(series2);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.Legend = "Legend1";
+            series9.Name = "Battery Level";
+            series9.YValuesPerPoint = 4;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Battery Voltage";
+            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series10.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series9);
+            this.chartBatteryLevel.Series.Add(series10);
             this.chartBatteryLevel.Size = new System.Drawing.Size(866, 444);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
@@ -198,7 +198,7 @@
             // 
             this.labelVoltage.AutoSize = true;
             this.labelVoltage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVoltage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.labelVoltage.ForeColor = System.Drawing.Color.DarkOrange;
             this.labelVoltage.Location = new System.Drawing.Point(6, 48);
             this.labelVoltage.Name = "labelVoltage";
             this.labelVoltage.Size = new System.Drawing.Size(102, 13);
@@ -209,7 +209,7 @@
             // 
             this.labelLevel.AutoSize = true;
             this.labelLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLevel.ForeColor = System.Drawing.Color.Blue;
+            this.labelLevel.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelLevel.Location = new System.Drawing.Point(6, 26);
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(86, 13);
@@ -321,9 +321,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 602);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 12);
+            this.label6.Size = new System.Drawing.Size(107, 12);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Developed by Lucca G. / A. Patricio";
+            this.label6.Text = "Developed by A. Patricio";
             // 
             // label7
             // 
