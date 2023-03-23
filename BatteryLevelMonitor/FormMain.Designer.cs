@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,9 +67,9 @@
             // 
             this.buttonStart.BackColor = System.Drawing.Color.LightSkyBlue;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(522, 47);
+            this.buttonStart.Location = new System.Drawing.Point(522, 29);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(166, 62);
+            this.buttonStart.Size = new System.Drawing.Size(166, 80);
             this.buttonStart.TabIndex = 2;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = false;
@@ -113,27 +113,27 @@
             // chartBatteryLevel
             // 
             this.chartBatteryLevel.BorderlineWidth = 4;
-            chartArea5.Area3DStyle.WallWidth = 4;
-            chartArea5.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend5);
+            chartArea6.Area3DStyle.WallWidth = 4;
+            chartArea6.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend6);
             this.chartBatteryLevel.Location = new System.Drawing.Point(345, 142);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series9.Legend = "Legend1";
-            series9.Name = "Battery Level";
-            series9.YValuesPerPoint = 4;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Battery Voltage";
-            series10.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series10.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series9);
-            this.chartBatteryLevel.Series.Add(series10);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.Legend = "Legend1";
+            series11.Name = "Battery Level";
+            series11.YValuesPerPoint = 4;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Legend = "Legend1";
+            series12.Name = "Battery Voltage";
+            series12.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series12.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series11);
+            this.chartBatteryLevel.Series.Add(series12);
             this.chartBatteryLevel.Size = new System.Drawing.Size(866, 444);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
@@ -160,7 +160,7 @@
             // 
             // buttonLed
             // 
-            this.buttonLed.Location = new System.Drawing.Point(237, 16);
+            this.buttonLed.Location = new System.Drawing.Point(282, 9);
             this.buttonLed.Name = "buttonLed";
             this.buttonLed.Size = new System.Drawing.Size(38, 37);
             this.buttonLed.TabIndex = 11;
@@ -170,7 +170,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(142, 16);
+            this.label4.Location = new System.Drawing.Point(164, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 15);
             this.label4.TabIndex = 12;
@@ -188,9 +188,9 @@
             "180",
             "240",
             "300"});
-            this.comboBoxInterval.Location = new System.Drawing.Point(144, 34);
+            this.comboBoxInterval.Location = new System.Drawing.Point(167, 33);
             this.comboBoxInterval.Name = "comboBoxInterval";
-            this.comboBoxInterval.Size = new System.Drawing.Size(53, 21);
+            this.comboBoxInterval.Size = new System.Drawing.Size(46, 21);
             this.comboBoxInterval.TabIndex = 13;
             this.comboBoxInterval.Text = "5";
             // 
@@ -228,15 +228,15 @@
             // 
             // textBoxSave
             // 
-            this.textBoxSave.Location = new System.Drawing.Point(9, 85);
+            this.textBoxSave.Location = new System.Drawing.Point(40, 84);
             this.textBoxSave.Name = "textBoxSave";
-            this.textBoxSave.Size = new System.Drawing.Size(208, 20);
+            this.textBoxSave.Size = new System.Drawing.Size(280, 20);
             this.textBoxSave.TabIndex = 17;
             this.textBoxSave.Text = "C:\\temp";
             // 
             // buttonFolder
             // 
-            this.buttonFolder.Location = new System.Drawing.Point(223, 82);
+            this.buttonFolder.Location = new System.Drawing.Point(9, 82);
             this.buttonFolder.Name = "buttonFolder";
             this.buttonFolder.Size = new System.Drawing.Size(27, 23);
             this.buttonFolder.TabIndex = 18;
@@ -277,7 +277,7 @@
             this.groupBox1.Controls.Add(this.labelStatus);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 133);
+            this.groupBox1.Size = new System.Drawing.Size(326, 133);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setting";

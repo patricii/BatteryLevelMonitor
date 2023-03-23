@@ -21,7 +21,7 @@ namespace BatteryLevelMonitor
         }
         void timerLevelChart_Tick(object sender, EventArgs e)
         {
-            LaunchCommandLineCmd();
+            LaunchCommandLineCmd("adb shell dumpsys battery");
             setValuesLevel();
         }
         private void buttonExit_Click(object sender, EventArgs e)
@@ -53,16 +53,13 @@ namespace BatteryLevelMonitor
                 timerLevelChart.Tick += new EventHandler(timerLevelChart_Tick);
                 timerLevelChart.Start();
             }
-
         }
-
-        public void LaunchCommandLineCmd()
+        public void LaunchCommandLineCmd(string ADBcommand)
         {
             StreamReader outputReader = null;
             StreamReader errorReader = null;
             StreamWriter inStream = null;
             textBoxStatus.Text = "\n CMD Inicializado.... \n\n";
-
             try
             {
                 ProcessStartInfo processStartInfo = new ProcessStartInfo("cmd.exe");
@@ -78,13 +75,12 @@ namespace BatteryLevelMonitor
                 bool processStarted = process.Start();
                 if (processStarted)
                 {
-
                     outputReader = process.StandardOutput;
                     errorReader = process.StandardError;
                     inStream = process.StandardInput;
 
                     inStream.WriteLine("adb connect " + ipAddress + ":5555");
-                    inStream.WriteLine("adb shell dumpsys battery");
+                    inStream.WriteLine(ADBcommand);
                     inStream.WriteLine("exit");
 
                     process.WaitForExit();
@@ -125,38 +121,27 @@ namespace BatteryLevelMonitor
             string logName = ipAddress;
             logName = logName.Replace(".", "");
             string filepath = @"\BatteryMonitorLog" + logName + ".csv";
+            string regExPattern2 = "voltage" + ":(.*?\\s\\s)"; //Voltage regex
+            string regExPattern = "level" + ":(.*?\\s\\s)"; //Level Regex
+            DateTime today = DateTime.Now; //log dateTime
+            string time = today.ToString("hh:mm:ss");
+            double tmpBattVoltage = 0.0;
 
             filepath = textBoxSave.Text + filepath;
 
             try
             {
-                //Voltage regex
-                string regExPattern2 = "voltage" + ":(.*?\\s\\s)";
                 MatchCollection fieldValue2 = Regex.Matches(tempVoltage, regExPattern2, RegexOptions.IgnoreCase);
-
                 foreach (var match in fieldValue2)
                 {
                     BattVoltage = match.ToString();
                 }
-
                 BattVoltage = BattVoltage.Replace("voltage:", "");
-                //Voltage regex End
 
-
-                //log dateTime
-                DateTime today = DateTime.Now;
-
-                string time = today.ToString("hh:mm:ss");
-
-                //Level Regex
-                string regExPattern = "level" + ":(.*?\\s\\s)";
                 Match fieldValue = Regex.Match(resultFromUnit, regExPattern, RegexOptions.IgnoreCase);
                 Battlevel = fieldValue.Groups[1].Value.Trim();
-
                 labelLevel.Text = "Battery Level:" + Battlevel + "%";
 
-                //Level Regex End
-                double tmpBattVoltage = 0.0;
                 if (countInstant == 0)
                     labelInit.Text = "Start Time:" + time;
 
@@ -164,10 +149,7 @@ namespace BatteryLevelMonitor
                 {
                     tmpBattVoltage = double.Parse(BattVoltage) / 1000;
                 }
-                catch
-                {
-                    //do nothing!!!
-                }
+                catch { }
 
                 labelVoltage.Text = "Battery Voltage:" + tmpBattVoltage + "V";
                 chartBatteryLevel.ChartAreas[0].AxisY2.Minimum = 3;
@@ -203,10 +185,8 @@ namespace BatteryLevelMonitor
                     }
                 }
             }
-            catch (Exception e)
-            {
-                //MessageBox.Show("Error: " + e);
-            }
+            catch { }
+
             finally
             {
                 try
@@ -234,6 +214,5 @@ namespace BatteryLevelMonitor
                 labelCycle.Text = "Cycle nº:" + countInstant.ToString();
             }
         }
-
     }
 }
