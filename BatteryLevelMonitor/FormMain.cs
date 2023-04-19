@@ -195,12 +195,16 @@ namespace BatteryLevelMonitor
                     {
                         timerLevelChart.Enabled = false;
                         buttonLed.BackColor = Color.Red;
+                        string fileGraph = textBoxSave.Text + @"\DischargingGraph.png";
+                        chartBatteryLevel.SaveImage(fileGraph, System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
                         MessageBox.Show("....Discharging Analysis completed....!!!");
                     }
                     if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
                     {
                         timerLevelChart.Enabled = false;
                         buttonLed.BackColor = Color.Red;
+                        string fileGraph = textBoxSave.Text + @"\ChargingGraph.png";
+                        chartBatteryLevel.SaveImage(fileGraph, System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
                         MessageBox.Show("....Charging Analysis completed....!!!");
 
                     }

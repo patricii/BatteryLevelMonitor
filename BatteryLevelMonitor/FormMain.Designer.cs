@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -113,27 +113,27 @@
             // chartBatteryLevel
             // 
             this.chartBatteryLevel.BorderlineWidth = 4;
-            chartArea6.Area3DStyle.WallWidth = 4;
-            chartArea6.Name = "ChartArea1";
-            this.chartBatteryLevel.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartBatteryLevel.Legends.Add(legend6);
+            chartArea2.Area3DStyle.WallWidth = 4;
+            chartArea2.Name = "ChartArea1";
+            this.chartBatteryLevel.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartBatteryLevel.Legends.Add(legend2);
             this.chartBatteryLevel.Location = new System.Drawing.Point(345, 142);
             this.chartBatteryLevel.Name = "chartBatteryLevel";
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series11.Legend = "Legend1";
-            series11.Name = "Battery Level";
-            series11.YValuesPerPoint = 4;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series12.Legend = "Legend1";
-            series12.Name = "Battery Voltage";
-            series12.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series12.YValuesPerPoint = 4;
-            this.chartBatteryLevel.Series.Add(series11);
-            this.chartBatteryLevel.Series.Add(series12);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.Name = "Battery Level";
+            series3.YValuesPerPoint = 4;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Battery Voltage";
+            series4.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series4.YValuesPerPoint = 4;
+            this.chartBatteryLevel.Series.Add(series3);
+            this.chartBatteryLevel.Series.Add(series4);
             this.chartBatteryLevel.Size = new System.Drawing.Size(866, 444);
             this.chartBatteryLevel.TabIndex = 7;
             this.chartBatteryLevel.Text = "chartBatteryLevel";
@@ -355,7 +355,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WiFi Battery Level Monitor - WBLMv1.0";
+            this.Text = "WiFi Battery Level Monitor - WBLMv1.2";
             ((System.ComponentModel.ISupportInitialize)(this.chartBatteryLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
