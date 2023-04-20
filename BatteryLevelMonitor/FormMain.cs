@@ -4,16 +4,26 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace BatteryLevelMonitor
 {
     public partial class FormMain : Form
     {
-        System.Windows.Forms.Timer timerLevelChart = new System.Windows.Forms.Timer(); //timer
+        Timer timerLevelChart = new Timer();
         public static string ipAddress = string.Empty;
         string resultFromUnit = string.Empty;
         int countInstant = 0;
         int interval = 0;
+        string Battlevel = string.Empty;
+        string BattVoltage = string.Empty;
+        double tmpBattVoltage = 0.0;
+        string tempVoltage = string.Empty;
+        string logName = string.Empty;
+        string filepath = string.Empty;
+        string regExPattern = string.Empty;
+        string regExPattern2 = string.Empty;
+        string time = string.Empty;
 
         public FormMain()
         {
@@ -109,21 +119,18 @@ namespace BatteryLevelMonitor
         }
         public void setValuesLevel()
         {
-            resultFromUnit = textBoxStatus.Text;
-            string tempVoltage = resultFromUnit;
-            string Battlevel = string.Empty;
-            string BattVoltage = string.Empty;
-            string logName = ipAddress;
-            logName = logName.Replace(".", "");
-            string filepath = @"\BatteryMonitorLog" + logName + ".csv";
-            string regExPattern2 = "voltage" + ":(.*?\\s\\s)"; //Voltage regex
-            string regExPattern = "level" + ":(.*?\\s\\s)"; //Level Regex
-            DateTime today = DateTime.Now; //log dateTime
-            string time = today.ToString("hh:mm:ss");
-            double tmpBattVoltage = 0.0;
             int minLevel = Convert.ToInt32(textBoxMinLevel.Text);
             int maxLevel = Convert.ToInt32(textBoxMaxLevel.Text);
 
+            resultFromUnit = textBoxStatus.Text;
+            tempVoltage = resultFromUnit;
+            logName = ipAddress;
+            logName = logName.Replace(".", "");
+            filepath = @"\BatteryMonitorLog" + logName + ".csv";
+            regExPattern2 = "voltage" + ":(.*?\\s\\s)";
+            regExPattern = "level" + ":(.*?\\s\\s)";
+            DateTime today = DateTime.Now;
+            time = today.ToString("hh:mm:ss");
 
             filepath = textBoxSave.Text + filepath;
 
@@ -160,8 +167,8 @@ namespace BatteryLevelMonitor
                 {
                     //Plot Graph
                     chartBatteryLevel.Series[0].Points.AddXY(countInstant, Battlevel);
-                    chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString());
-                    //write log report
+                    chartBatteryLevel.Series[1].Points.AddXY(countInstant, tmpBattVoltage.ToString(CultureInfo.InvariantCulture));
+
                     if (!File.Exists(filepath))
                     {
                         using (StreamWriter writer = new StreamWriter(new FileStream(filepath,
