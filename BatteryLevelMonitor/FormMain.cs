@@ -38,7 +38,6 @@ namespace BatteryLevelMonitor
         private void buttonStart_Click(object sender, EventArgs e)
         {
             ipAddress = textBoxIp.Text;
-
             if (ipAddress.Length < 13)
             {
                 MessageBox.Show("Digite o IP da unidade a ser monitorada!!!");
@@ -99,17 +98,13 @@ namespace BatteryLevelMonitor
             finally
             {
                 if (outputReader != null)
-                {
                     outputReader.Close();
-                }
+
                 if (errorReader != null)
-                {
                     errorReader.Close();
-                }
+
                 if (inStream != null)
-                {
                     inStream.Close();
-                }
             }
         }
         public void setValuesLevel()
@@ -126,6 +121,9 @@ namespace BatteryLevelMonitor
             DateTime today = DateTime.Now; //log dateTime
             string time = today.ToString("hh:mm:ss");
             double tmpBattVoltage = 0.0;
+            int minLevel = Convert.ToInt32(textBoxMinLevel.Text);
+            int maxLevel = Convert.ToInt32(textBoxMaxLevel.Text);
+
 
             filepath = textBoxSave.Text + filepath;
 
@@ -172,7 +170,6 @@ namespace BatteryLevelMonitor
                             writer.WriteLine("sep=,");
                             writer.WriteLine("Time,Instant,BattLevel,BattVoltage");
                             writer.WriteLine($"{time},{countInstant},{Battlevel}, {tmpBattVoltage}");
-
                         }
                     }
                     else
@@ -191,7 +188,7 @@ namespace BatteryLevelMonitor
             {
                 try
                 {
-                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= 1))
+                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) <= minLevel))
                     {
                         timerLevelChart.Enabled = false;
                         buttonLed.BackColor = Color.Red;
@@ -199,7 +196,7 @@ namespace BatteryLevelMonitor
                         chartBatteryLevel.SaveImage(fileGraph, System.Windows.Forms.DataVisualization.Charting.ChartImageFormat.Png);
                         MessageBox.Show("....Discharging Analysis completed....!!!");
                     }
-                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == 70))
+                    if ((countInstant != 0) && (Convert.ToInt32(Battlevel) == maxLevel))
                     {
                         timerLevelChart.Enabled = false;
                         buttonLed.BackColor = Color.Red;
